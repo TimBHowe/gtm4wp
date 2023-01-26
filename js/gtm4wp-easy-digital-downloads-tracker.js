@@ -1,0 +1,1 @@
+alert("EDD js loaded");

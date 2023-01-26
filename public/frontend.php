@@ -775,6 +775,11 @@ function gtm4wp_enqueue_scripts() {
 		wp_enqueue_script( 'gtm4wp-contact-form-7-tracker', $gtp4wp_plugin_url . 'js/gtm4wp-contact-form-7-tracker.js', array(), GTM4WP_VERSION, $in_footer );
 	}
 
+	if ( $gtm4wp_options[ GTM4WP_OPTION_INTEGRATE_EDD ] ) {
+		$in_footer = (bool) apply_filters( 'gtm4wp_' . GTM4WP_OPTION_INTEGRATE_EDD, true );
+		wp_enqueue_script( 'gtm4wp-easy-digital-downloads-tracker', $gtp4wp_plugin_url . 'js/gtm4wp-easy-digital-downloads-tracker.js', array(), GTM4WP_VERSION, $in_footer );
+	}
+
 	if ( $gtm4wp_options[ GTM4WP_OPTION_EVENTS_FORMMOVE ] ) {
 		$in_footer = (bool) apply_filters( 'gtm4wp_' . GTM4WP_OPTION_EVENTS_FORMMOVE, true );
 		wp_enqueue_script( 'gtm4wp-form-move-tracker', $gtp4wp_plugin_url . 'js/gtm4wp-form-move-tracker.js', array(), GTM4WP_VERSION, $in_footer );
