@@ -107,6 +107,8 @@ define( 'GTM4WP_OPTION_BLACKLIST_MACRO_AUTOEVENT', 'blacklist-macro-autoevent-va
 
 define( 'GTM4WP_OPTION_INTEGRATE_WPCF7', 'integrate-wpcf7' );
 
+define( 'GTM4WP_OPTION_INTEGRATE_EDD', 'integrate-edd' );
+
 define( 'GTM4WP_OPTION_INTEGRATE_WCTRACKCLASSICEC', 'integrate-woocommerce-track-classic-ecommerce' );
 define( 'GTM4WP_OPTION_INTEGRATE_WCTRACKENHANCEDEC', 'integrate-woocommerce-track-enhanced-ecommerce' );
 define( 'GTM4WP_OPTION_INTEGRATE_WCPRODPERIMPRESSION', 'integrate-woocommerce-product-per-impression' );
@@ -207,6 +209,8 @@ $gtm4wp_defaultoptions = array(
 	GTM4WP_OPTION_BLACKLIST_STATUS                => '',
 
 	GTM4WP_OPTION_INTEGRATE_WPCF7                 => false,
+
+	GTM4WP_OPTION_INTEGRATE_EDD                   => false,
 
 	GTM4WP_OPTION_INTEGRATE_WCTRACKCLASSICEC      => false,
 	GTM4WP_OPTION_INTEGRATE_WCTRACKENHANCEDEC     => false,

@@ -1045,6 +1045,7 @@ function gtm4wp_add_admin_js( $hook ) {
 			'blocktriggerstabtitle'    => esc_html__( 'Blacklist triggers', 'duracelltomi-google-tag-manager' ),
 			'blockmacrostabtitle'      => esc_html__( 'Blacklist variables', 'duracelltomi-google-tag-manager' ),
 			'wpcf7tabtitle'            => esc_html__( 'Contact Form 7', 'duracelltomi-google-tag-manager' ),
+			'eddtabtitle'              => esc_html__( 'Easy Digital Downloads', 'duracelltomi-google-tag-manager' ),
 			'wctabtitle'               => esc_html__( 'WooCommerce', 'duracelltomi-google-tag-manager' ),
 			'gotabtitle'               => esc_html__( 'Google Optimize', 'duracelltomi-google-tag-manager' ),
 			'amptabtitle'              => esc_html__( 'Accelerated Mobile Pages', 'duracelltomi-google-tag-manager' ),

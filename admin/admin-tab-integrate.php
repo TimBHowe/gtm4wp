@@ -15,6 +15,12 @@ $GLOBALS['gtm4wp_integratefieldtexts'] = array(
 		'phase'         => GTM4WP_PHASE_STABLE,
 		'plugintocheck' => 'contact-form-7/wp-contact-form-7.php',
 	),
+	GTM4WP_OPTION_INTEGRATE_EDD                 => array(
+		'label'         => esc_html__( 'Easy Digital Downloads', 'duracelltomi-google-tag-manager' ),
+		'description'   => esc_html__( 'Check this to fire dataLayer events for Easy Digital Downloads eCommerce Events', 'duracelltomi-google-tag-manager' ),
+		'phase'         => GTM4WP_PHASE_STABLE,
+		'plugintocheck' => 'easy-digital-downloads/easy-digital-downloads.php',
+	),
 	GTM4WP_OPTION_INTEGRATE_WCTRACKCLASSICEC      => array(
 		'label'       => esc_html__( 'Track classic e-commerce', 'duracelltomi-google-tag-manager' ),
 		'description' => esc_html__( 'This feature is deprecated and will be removed soon! You should upgrade to enhanced ecommerce as soon as possible.', 'duracelltomi-google-tag-manager' ),
@@ -26,7 +32,7 @@ $GLOBALS['gtm4wp_integratefieldtexts'] = array(
 			gtm4wp_safe_admin_html(
 				// translators: 1: anchor element linking to Universal Analytics Enhanced Ecommerce docs. 2: closing anchor element. 3: anchor element linking to GTM4WP setup guide for Universal Analytics. 4: closing anchor element. 5: anchor element linking to GTM4WP setup guide for Google Analytics 4. 6: closing anchor element.
 				__(
-					'Choose this option if you would like to track e-commerce data using 
+					'Choose this option if you would like to track e-commerce data using
 					 %1$senhanced ecommerce tracking%2$s.<br>
 					 Use the plugin\'s official guides to setup your Google Tag Manager container:<br/>
 					 <ul><li>%3$sGoogle Analytics 3 / Universal Analytics setup%4$s</li>

@@ -65,6 +65,10 @@ var adminsubtabs = {
 			tabtext: gtm4wp.wpcf7tabtitle,
 			numitems: 1
 		},
+		"int-edd": {
+			tabtext: gtm4wp.eddtabtitle,
+			numitems: 1
+		},
 		"int-wc": {
 			tabtext: gtm4wp.wctabtitle,
 			numitems: 17
