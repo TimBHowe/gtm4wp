@@ -1,1 +1,1 @@
-alert("EDD js loaded");
+// alert("EDD js loaded");

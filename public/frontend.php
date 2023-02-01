@@ -1278,6 +1278,10 @@ if (
 	require_once dirname( __FILE__ ) . '/../integration/woocommerce.php';
 }
 
+if ( isset( $GLOBALS['gtm4wp_options'] ) && ( '' !== $GLOBALS['gtm4wp_options'][ GTM4WP_OPTION_INTEGRATE_EDD] ) ) {
+	require_once dirname( __FILE__ ) . '/../integration/easy-digital-downloads.php';
+}
+
 if ( isset( $GLOBALS['gtm4wp_options'] ) && ( '' !== $GLOBALS['gtm4wp_options'][ GTM4WP_OPTION_INTEGRATE_GOOGLEOPTIMIZEIDS ] ) ) {
 	require_once dirname( __FILE__ ) . '/../integration/google-optimize.php';
 }

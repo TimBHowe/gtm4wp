@@ -979,6 +979,7 @@ function gtm4wp_admin_init() {
 	require_once dirname( __FILE__ ) . '/../integration/youtube.php';
 	require_once dirname( __FILE__ ) . '/../integration/vimeo.php';
 	require_once dirname( __FILE__ ) . '/../integration/soundcloud.php';
+	require_once dirname( __FILE__ ) . '/../integration/easy-digital-downloads.php';
 }
 
 /**
