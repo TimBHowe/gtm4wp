@@ -10,6 +10,12 @@
 
 /**
  * Get the information when a product is added to the cart
+ * https://developers.google.com/analytics/devguides/collection/ga4/ecommerce?client_type=gtag#add_or_remove_an_item_from_a_shopping_cart
+ *
+ * TODO: Add affiliation. Tells any affiliate with the product.
+ * TODO: Add index. Tells the position of the item in the cart.
+ * TODO: Add item_list_id and item_list_name. Tells there the item was displayed and the ad d to cart.
+ * TODO: Add location_id. Tells the location where this was purchased from. Might be unnecessary for online retail, but could be the company headquarters.
  *
  * @param int   $download_id The download ID being added to the cart.
  * @param array $options The options for the item being added including but not limited to quantity.
@@ -21,6 +27,7 @@ function gtm4wp_edd_post_add_to_cart( $download_id, $options, $items ) {
 
 	// Loop through the items and build the items array for the event.
 	$event_items = array();
+	$event_value = 0;
 	foreach ( $items as $item ) {
 
 		// Get the items basic information.
@@ -36,6 +43,9 @@ function gtm4wp_edd_post_add_to_cart( $download_id, $options, $items ) {
 			'coupon'       => $coupons ? implode( ',', $coupons ) : '',
 			'discount'     => $coupons ? edd_get_item_discount_amount( $item, $items, $coupons ) : '',
 		);
+
+		// Collect and calculate the total event value.
+		$event_value = $event_value + edd_get_cart_item_price( $item_id, $item_options ) - edd_get_item_discount_amount( $item, $items, $coupons );
 
 		// Get the items category information.
 		$item_cats  = get_the_terms( $download_id, 'download_category' );
@@ -60,22 +70,32 @@ function gtm4wp_edd_post_add_to_cart( $download_id, $options, $items ) {
 		'ecommerce' =>
 		array(
 			'currency' => edd_get_currency(),
-			'value'    => 'TODO',
+			'value'    => $event_value,
 			'items'    => $event_items,
 		),
 	);
-	echo '<pre>';
-	var_dump( $item_cats );
-	var_dump( $options );
-	var_dump( $items );
-	var_dump( $event );
 
-	// edd_get_cart_item_discount_amount();
-	// edd_get_item_position_in_cart( $download_id, $options );
-	// edd_get_cart_item_price( $download_id, $options );
-	// edd_get_price_name( $download_id, $options );
+	// TODO: pass to the datalayer.
 
-	// edd_empty_cart();
+	echo "<script>console.log($event);</script>";
 	exit;
+
+	die();
 }
 add_action( 'edd_post_add_to_cart', 'gtm4wp_edd_post_add_to_cart', 10, 3 );
+
+
+
+// echo '<pre>';
+// var_dump( $download_id );
+// var_dump( $options );
+// var_dump( $items );
+// var_dump( $event );
+
+// edd_get_cart_item_discount_amount();
+// edd_get_item_position_in_cart( $download_id, $options );
+// edd_get_cart_item_price( $download_id, $options );
+// edd_get_price_name( $download_id, $options );
+
+// edd_empty_cart();
+// exit;

@@ -1,1 +1,1 @@
-// alert("EDD js loaded");
+// console.log("EDD event" + edd_event);
