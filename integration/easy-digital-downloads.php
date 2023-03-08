@@ -75,14 +75,29 @@ function gtm4wp_edd_post_add_to_cart( $download_id, $options, $items ) {
 		),
 	);
 
+	if ( ! edd_is_ajax_disabled() ) {
+
+	}
+
 	// TODO: pass to the datalayer.
+	//gtm4wp_edd_send_event( $event );
 
-	echo "<script>console.log($event);</script>";
-	exit;
-
-	die();
+	// TODO: Remove after testing.
+	edd_empty_cart();
+	// exit;
 }
 add_action( 'edd_post_add_to_cart', 'gtm4wp_edd_post_add_to_cart', 10, 3 );
+
+
+/**
+ * Adds item to the cart via AJAX.
+ *
+ * @since 1.0
+ * @return void
+ */
+// function edd_ajax_add_to_cart() {}
+
+// function gtm4wp_edd_send_event( $event ) {}
 
 
 
